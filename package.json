@@ -1,0 +1,32 @@
+{
+  "name": "@prsm/hash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts --clean --minify",
+    "release": "bumpp package.json --commit 'Release %s' --push --tag && pnpm publish --access public"
+  },
+  "keywords": [],
+  "author": "nvms",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "bumpp": "^9.1.1",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
+}
