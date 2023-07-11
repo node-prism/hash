@@ -2,7 +2,11 @@
 
 A very simple string hashing library.
 
-# create
+# Installation
+
+`npm install @prsm/jwt`
+
+## create
 
 ```typescript
 import { hash } from "@prsm/hash";
@@ -17,7 +21,7 @@ hash.create("secret");
 // sha256:0SA+O819D52jZOqWuzIWa+KLyT+Ck+b5ze4HI7fAJOhRW3FYk527GnuVOS/pricLy1KqwUfk5wWyQx4z5x3fsA==:wPs8DRMOrZEJYeaPxZzccGPJSozGvNqRhhS6f8ITOyM=
 ```
 
-# verify
+## verify
 
 ```typescript
 import { hash } from "@prsm/hash";
@@ -29,7 +33,7 @@ const valid = hash.verify(
 // valid = true
 ```
 
-# custom hasher
+## custom hasher
 
 ```typescript
 import { Hasher } from "@prsm/hash";
